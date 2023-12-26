@@ -5,7 +5,7 @@ const createArrayElement = arr => {
            height="200"   src="${item.webformatURL}" alt="${item.tags}"></a><div class="cont">
           <div class="mini-cont">
             <p><strong>Likes</strong></p>
-            <p>${item.likes}</p>
+            <p>${item.likes}</p> 
           </div>
           <div class="mini-cont">
             <p><strong>Views</strong></p>
