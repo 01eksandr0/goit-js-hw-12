@@ -10,7 +10,7 @@ const searchParams = {
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
-  per_page: 40,
+  limit: 40,
   page: 1,
 };
 const formSubmit = event => {
@@ -27,10 +27,6 @@ const nextElements = () => {
   loader.style.display = 'inline-block';
   searchParams.page++;
   thenCatch(searchParams);
-
-  /*  0,
-    2 * document.querySelector('.list-item').getBoundingClientRect().height,
-    { behavior: 'smooth' }*/
 };
 
 formEl.addEventListener('submit', formSubmit);
