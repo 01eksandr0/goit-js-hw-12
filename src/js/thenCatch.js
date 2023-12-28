@@ -12,8 +12,6 @@ const gallery = new SimpleLightbox('.list a');
 export const thenCatch = searchParams => {
   fetchCart(searchParams)
     .then(response => {
-      console.log(Math.ceil(response.data.totalHits / 40));
-      console.log(searchParams.page);
       if (searchParams.page === Math.ceil(response.data.totalHits / 40)) {
         iziToast.error({
           message: "We're sorry, but you've reached the end of search results.",
