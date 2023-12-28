@@ -12,14 +12,17 @@ const gallery = new SimpleLightbox('.list a');
 export const thenCatch = searchParams => {
   fetchCart(searchParams)
     .then(response => {
-      if (searchParams.page >= response.data.totalHits / 40) {
+      console.log(Math.ceil(response.data.totalHits / 40));
+      console.log(searchParams.page);
+      if (searchParams.page === Math.ceil(response.data.totalHits / 40)) {
         iziToast.error({
           message: "We're sorry, but you've reached the end of search results.",
           position: 'center',
         });
         btnNextEl.style.display = 'none';
         loader.style.display = 'none';
-      } else return response.data;
+      }
+      return response.data;
     })
     .then(json => {
       const marcup = createArrayElement(json.hits);
@@ -32,7 +35,10 @@ export const thenCatch = searchParams => {
         loader.style.display = 'none';
       } else {
         listEl.insertAdjacentHTML('beforeend', marcup.join(' '));
-        btnNextEl.style.display = 'block';
+        if (searchParams.page < Math.ceil(json.totalHits / 40)) {
+          btnNextEl.style.display = 'block';
+        }
+
         loader.style.display = 'none';
         gallery.refresh();
         if (searchParams.page > 1) {

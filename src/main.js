@@ -10,8 +10,7 @@ const searchParams = {
   image_type: 'photo',
   orientation: 'horizontal',
   safesearch: true,
-  _limit: 5,
-  per_page: 5,
+  per_page: 40,
   page: 1,
 };
 const formSubmit = event => {
