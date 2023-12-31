@@ -2,6 +2,8 @@ import{a as g,S as h,i as d}from"./assets/vendor-f67ecabd.js";(function(){const 
            height="200"   src="${o.webformatURL}" alt="${o.tags}"></a><div class="cont">
           <div class="mini-cont">
             <p><strong>Likes</strong></p>
+
+  
             <p>${o.likes}</p> 
           </div>
           <div class="mini-cont">
